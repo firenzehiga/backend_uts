@@ -48,7 +48,7 @@ class AuthController extends Controller
             return response()->json($data, 200);
         }else{
             $data = [
-                'message' => 'Email atau Password salah',
+                'message' => 'Wrong password or email',
             ];
 
             # mengembalikan respon JSON
