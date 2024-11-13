@@ -10,6 +10,9 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+# menambahkan authentication sanctum
+Route::middleware('auth:sanctum')->group(function () {
+
     # route employees
     Route::get('/employee', [EmployeeController::class, 'index']);
     # route store untuk menambahkan data
@@ -28,3 +31,9 @@ Route::get('/user', function (Request $request) {
     Route::get('/inactive', [EmployeeController::class, 'getInActive']);
     # route get terminated untuk menampilkan data pegawai yang terminated
     Route::get('/terminated', [EmployeeController::class, 'getTerminated']);
+});
+
+    # route login
+    Route::post('/login', [AuthController::class, 'login']);
+    # route register
+    Route::post('/register', [AuthController::class, 'register']);
