@@ -171,25 +171,25 @@ class EmployeeController extends Controller
 
     public function getInActive()
     {
-        $activeEmployees = Employee::where('status', 'inactive')->get(); // Sesuaikan field status
+        $inactiveEmployees = Employee::where('status', 'inactive')->get(); // Sesuaikan field status
 
         // mengecek apakah data pegawai aktif ditemukan
         return response()->json([
-            'message' => 'Get active resource',
-            'total' => $activeEmployees->count(),
-            'data' => $activeEmployees,
+            'message' => 'Get inactive resource',
+            'total' => $inactiveEmployees->count(),
+            'data' => $inactiveEmployees,
         ], 200);
     }
 
     public function getTerminated()
     {
-        $activeEmployees = Employee::where('status', 'terminated')->get(); // Sesuaikan field status
+        $terminatedEmployees = Employee::where('status', 'terminated')->get(); // Sesuaikan field status
 
         // mengecek apakah data pegawai aktif ditemukan
         return response()->json([
-            'message' => 'Get active resource',
-            'total' => $activeEmployees->count(),
-            'data' => $activeEmployees,
+            'message' => 'Get terminated resource',
+            'total' => $terminatedEmployees->count(),
+            'data' => $terminatedEmployees,
         ], 200);
     }
     

@@ -24,3 +24,7 @@ Route::get('/user', function (Request $request) {
     Route::get('/search', [EmployeeController::class, 'searchByName']);
     # route get active untuk menampilkan data pegawai yang aktif
     Route::get('/active', [EmployeeController::class, 'getActive']);
+    # route get inactive untuk menampilkan data pegawai yang tidak aktif
+    Route::get('/inactive', [EmployeeController::class, 'getInActive']);
+    # route get terminated untuk menampilkan data pegawai yang terminated
+    Route::get('/terminated', [EmployeeController::class, 'getTerminated']);
